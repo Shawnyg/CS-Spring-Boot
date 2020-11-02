@@ -1,61 +1,310 @@
-<!DOCTYPE HTML>
+<!doctype html>
 <html lang="en">
-
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Bootstrap CSS -->
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <title>Kyle Plummer - BS in CS, Baby!</title>
-</head>
-
-<body>
-  <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="/">
-        <!-- change this to pull URL from database later-->
-        <img src="https://kplummer-awsbucket.s3.us-east-2.amazonaws.com/logo.PNG" width="50" height="50" alt="It's a logo">
-      </a>
-      <a class="navbar-brand" href="/">Home</a>
-      <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button> -->
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-        </ul>
-    </nav>
-    <br>
-
-    <div class="row">
-      <div class="col-12 col-md-4">
-        <img class="img-thumbnail" src="https://kplummer-awsbucket.s3.us-east-2.amazonaws.com/Kyle_Profile_Image.png" width="300">
-      </div>
-
-      <div class="col-12 col-md-8">
-        <h2>Kyle Plummer</h2>
-        <p>Text here to be replaced with text pulled from database
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-</body>
-
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="resources/bootstrap/img/favicon.png" type="image/png">
+        <title>Police Roleplay Community</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="resources/bootstrap/vendors/linericon/style.css">
+        <link rel="stylesheet" href="resources/bootstrap/css/font-awesome.min.css">
+        <link rel="stylesheet" href="resources/bootstrap/vendors/owl-carousel/owl.carousel.min.css">
+        <link rel="stylesheet" href="resources/bootstrap/vendors/lightbox/simpleLightbox.css">
+        <link rel="stylesheet" href="resources/bootstrap/vendors/nice-select/css/nice-select.css">
+        <link rel="stylesheet" href="resources/bootstrap/vendors/animate-css/animate.css">
+        <link rel="stylesheet" href="resources/bootstrap/vendors/popup/magnific-popup.css">
+        <link rel="stylesheet" href="resources/bootstrap/vendors/flaticon/flaticon.css">
+        <!-- main css -->
+        <link rel="stylesheet" href="resources/bootstrap/css/style.css">
+        <link rel="stylesheet" href="resources/bootstrap/css/responsive.css">
+    </head>
+    <body>
+        
+        <!--================Header Menu Area =================-->
+        <header class="header_area">
+            <div class="main_menu">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="container box_1620">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <a class="navbar-brand logo_h" href="index.html"><img src="resources/bootstrap/img/logo.png" alt=""></a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                            <ul class="nav navbar-nav menu_nav ml-auto">
+                                <li class="nav-item"><a class="nav-link active" href="#home" data-click="scroll-to-target">Home</a></li> 
+                                <li class="nav-item"><a class="nav-link active" href="#about" data-click="scroll-to-target">About Us</a></li> 
+                                <li class="nav-item"><a class="nav-link active" href="#games" data-click="scroll-to-target">Games</a>
+                                    <li class="nav-item"><a class="nav-link active" href="https://policeroleplay.community/appeal">Ban Appeal</a>
+                                <li class="nav-item"><a class="nav-link active" href="https://shop.policeroleplay.community/">Shop</a>
+                                <!--<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>-->
+                            </ul>
+                        </div> 
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!--================Header Menu Area =================-->
+        
+        <!--================Home Banner Area =================-->
+        <section class="home_banner_area" id="home">
+            <div class="banner_inner">
+                <div class="container">
+                    <div class="banner_content text-center">
+                        <h2>Police Roleplay Community</h2>
+                        <p>Roblox's most immersive emergency services roleplay community & game.</p>
+                        <a class="banner_btn" href="https://www.roblox.com/games/2534724415/Emergency-Response-Liberty-County-ALPHA">Play Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================End Home Banner Area =================-->
+        
+        <!--================Concept Area =================-->
+        <section class="concept_area" id="about">
+            <div class="box_1620">
+                <div class="row m0">
+                    <div class="left_img">
+                        <img src="resources/bootstrap/img/concept-1.png" alt="">
+                    </div>
+                    <div class="right_text">
+                        <div class="concept_text row m0">
+                            <div class="concept_text_inner">
+                                <h4>About our group</h4>
+                                <p>Police Roleplay Community is a group on Roblox platform which strives to build and encourage emergency services roleplay within the platform. We enable that play through our self made game, Emergency Response: Liberty County.</p>
+                                <h1>The Team</h1>
+                                <li>mrfergie - Owner</li>
+                                <li>Shawnyg - Senior Developer</li>
+                                <li>LostInfinity - Community Manager</li>
+                                <li>Infectalite - GFX Developer</li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================End Concept Area =================-->
+        
+        <!--================Feature Area =================-->
+        <section class="feature_area" id="games">
+            <div class="left_feature">
+                <div class="f_item">
+                    <h4><i class="flaticon-city"></i> Emergency Response: Liberty City</h4>
+                    <p>Our newest and greatest game, built from the ground up, sets the standard for emergency services on Roblox.</p>
+                </div>
+                <!--<div class="f_item">
+                    <h4><i class="flaticon-city"></i> Architecture</h4>
+                    <p>If you are looking at blank cassettes on the web, you may be very confused at the difference in price.</p>
+                </div>-->
+            </div>
+            <div class="right_feature">
+                <img src="resources/bootstrap/img/feature-1.jpg" width = "70%" alt="">
+            </div>
+        </section>
+        <!--================End Feature Area =================-->
+        
+        <!--================Fun Fact Area =================-->
+        <section class="fun_fact_area p_120">
+            <div class="container">
+                <div class="main_title">
+                    <!--<p>CAREER OVERVIEW</p>-->
+                    <br>
+                    <br>
+                    <h2>Some Quick Stats</h2>
+                </div>
+                <div class="row fun_fact_inner">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="fun_fact_item">
+                            <h4 class="counter">25,500,000</h4>
+                            <p>Plays</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="fun_fact_item">
+                            <h4 class="counter">84,000</h4>
+                            <p>Likes</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="fun_fact_item">
+                            <h4 class="counter">360,000</h4>
+                            <p>Favorites</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="fun_fact_item">
+                            <h4 class="counter">5,600</h4>
+                            <p>Concurrent Players</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="main_title">
+                    <br>
+                    <p>and growing every day!</p>
+                    <!--<h2>Some Quick Stats</h2>-->
+                </div>
+            </div>
+        </section>
+        <!--================End Fun Fact Area =================-->
+        
+        <!--================Testimonials Area =================-->
+        <section class="testimonials_area">
+            <div class="container box_1620">
+                <div class="testi_slider owl-carousel">
+                    <div class="item">
+                        <div class="testi_item">
+                            <img src="resources/bootstrap/img/testimonials/tes.png" alt="">
+                            <p>good game.</p>
+                            <h4>Builderman</h4>
+                            <ul class="list">
+                                <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                <li><a href="#"><i class="fa fa-star-half-o"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testi_item">
+                            <img src="resources/bootstrap/img/testimonials/tes.png" alt="">
+                            <p>yea good game.</p>
+                            <h4>ROBLOX</h4>
+                            <ul class="list">
+                                <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                <li><a href="#"><i class="fa fa-star-half-o"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================End Testimonials Area =================-->
+        
+        <!--================Projects Area =================-->
+        <section class="project_area p_120">
+            <div class="container box_1620">
+                <div class="main_title">
+                    <p>Our</p>
+                    <h2>Player's Screenshots</h2>
+                </div>
+                <div class="row project_inner imageGallery1">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="project_item">
+                            <img src="resources/bootstrap/img/project/player1.jpg" alt="">
+                            <a class="light" href="resources/bootstrap/img/project/player1.jpg"><i class="fa fa-expand"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="project_item">
+                            <img src="resources/bootstrap/img/project/player2.jpg" alt="">
+                            <a class="light" href="resources/bootstrap/img/project/player2.jpg"><i class="fa fa-expand"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="project_item">
+                            <img src="resources/bootstrap/img/project/player3.jpg" alt="">
+                            <a class="light" href="resources/bootstrap/img/project/player3.jpg"><i class="fa fa-expand"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="project_item">
+                            <img src="resources/bootstrap/img/project/player4.jpg" alt="">
+                            <a class="light" href="resources/bootstrap/img/project/player4.jpg"><i class="fa fa-expand"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================End Projects Area =================-->
+        
+      <!--  ================Clients Logo Area =================
+        <section class="clients_logo_area pad_btm">
+            <div class="container">
+                <div class="clients_slider owl-carousel">
+                    <div class="item">
+                        <img src="resources/bootstrap/img/clients-logo/c-logo-1.png" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="resources/bootstrap/img/clients-logo/c-logo-2.png" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="resources/bootstrap/img/clients-logo/c-logo-3.png" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="resources/bootstrap/img/clients-logo/c-logo-4.png" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="resources/bootstrap/img/clients-logo/c-logo-5.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>-->
+        <!--================End Clients Logo Area =================-->
+        
+        <!--================ start footer Area  =================-->    
+        <footer class="footer-area p_120">
+            <!--<div class="container">
+                <div class="single-footer-widget footer_middle">
+                    <h6 class="footer_title">Newsletter</h6>
+                    <p>Stay updated with our latest trends</p>      
+                    <div id="mc_embed_signup">
+                        <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative">
+                            <div class="input-group d-flex flex-row">
+                                <input name="EMAIL" placeholder="Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address '" required="" type="email">
+                                <button class="btn sub-btn"><span class="lnr lnr-location"></span></button>     
+                            </div>                                  
+                            <div class="mt-10 info"></div>
+                        </form>
+                    </div>
+                </div>-->
+                <div class="footer-bottom footer_copy">
+                    <p class="footer-text"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
+    </br>
+    </br>
+ <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    <div class="footer-social">
+                       <!-- <a href="#"><i class="fa fa-facebook"></i></a>-->
+                        <a href="https://twitter.com/PRC_Roblox"><i class="fa fa-twitter"></i></a>
+                        <a href="https://www.roblox.com/groups/4328109/Police-Roleplay-Community"><i class="fa fa-gamepad"></i></a>
+                        <!--<a href="#"><i class="fa fa-behance"></i></a>-->
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--================ End footer Area  =================-->
+        
+        
+        
+        
+        
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="resources/bootstrap/j/jquery-3.2.1.min.js"></script>
+        <script src="resources/bootstrap/j/popper.js"></script>
+        <script src="resources/bootstrap/j/bootstrap.min.js"></script>
+        <script src="resources/bootstrap/j/stellar.js"></script>
+        <script src="resources/bootstrap/vendors/lightbox/simpleLightbox.min.js"></script>
+        <script src="resources/bootstrap/vendors/nice-select/js/jquery.nice-select.min.js"></script>
+        <script src="resources/bootstrap/vendors/isotope/imagesloaded.pkgd.min.js"></script>
+        <script src="resources/bootstrap/vendors/isotope/isotope-min.js"></script>
+        <script src="resources/bootstrap/vendors/owl-carousel/owl.carousel.min.js"></script>
+        <script src="resources/bootstrap/j/jquery.ajaxchimp.min.js"></script>
+        <script src="resources/bootstrap/vendors/counter-up/jquery.waypoints.min.js"></script>
+        <script src="resources/bootstrap/vendors/counter-up/jquery.counterup.min.js"></script>
+        <script src="resources/bootstrap/j/mail-script.js"></script>
+        <script src="resources/bootstrap/vendors/popup/jquery.magnific-popup.min.js"></script>
+        <script src="resources/bootstrap/vendors/scroll/jquery.nicescroll.min.js"></script>
+        <script src="resources/bootstrap/j/theme.js"></script>
+    </body>
 </html>
