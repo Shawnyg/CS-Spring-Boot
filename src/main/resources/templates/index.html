@@ -66,8 +66,8 @@
                     <p>If you are looking at blank cassettes on the web, you may be very confused at the difference in price.</p>
                 </div>-->
             </div>
-            <div class="right_feature">
-                <img th:src="${imgSrc}" width = "70%" alt="">
+            <div class="right_feature" id="pfp">
+                
             </div>
         </section>
         <!--================End Feature Area =================-->
@@ -103,7 +103,12 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         </footer>
         <!--================ End footer Area  =================-->
         
-        
+        <script>
+          $.get("/users/userByEmail?email=s@no.com", function(val) {
+            //<img src="https://policeroleplay.community/img/feature-1.jpg" width = "70%" alt="">
+            $("#pfp").append("<img src =\"" + val + "\"width = \"70%\" alt=\"\">");
+          }
+        </script>
         
         
         
