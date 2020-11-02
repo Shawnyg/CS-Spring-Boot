@@ -1,5 +1,8 @@
-package hello;
+package com.example.demo;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+//copied from spring-boot-thymeleaf-aws-s3 GreetingController.java
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,8 +24,7 @@ import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 
 @Controller
-public class GreetingController {
-    // @Value("#{environment.accesskey}")
+public class MyProfileController {
     @Value("${accesskey}")
     String accesskey;
     @Value("${secretkey}")
@@ -30,23 +32,29 @@ public class GreetingController {
     @Value("${bucketName}")
     String bucketName;
 
-    @GetMapping("/")
+    
+    @RequestMapping("/")
     public String hello(){
-        return "hello";
+        return "index";
     }
     @GetMapping("/greeting")
     public ModelAndView greeting(@RequestParam(name = "name", required = true) String name) {
         ModelAndView mv = new ModelAndView("greeting");
-        mv.addObject("name", name+"lol");
+        mv.addObject("name", name + " lol");
         return mv;
     }
 
-
-    @GetMapping("/index")
+    @GetMapping("/edit")
     public ModelAndView renderUploadPage() {
-        //System.out.println(accesskey  + bucketName + secretkey);
-        return new ModelAndView("uploadFiles");
+        return new ModelAndView("editProfile");
+
     }
+
+    //@GetMapping("/index")
+    //public ModelAndView renderUploadPage() {
+        //System.out.println(accesskey  + bucketName + secretkey);
+    //    return new ModelAndView("uploadFiles");
+    //}
 
     @PostMapping(value = "/upload")
     public ModelAndView uploads3(@RequestParam("photo") MultipartFile image, @RequestParam(name = "desc") String desc) {
@@ -58,7 +66,7 @@ public class GreetingController {
         // AmazonS3Client client=AmazonS3ClientBuilder.standard().withCredentials(new
         // AWSCredentialsProvider(cred)).with
         AmazonS3 client = AmazonS3ClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(cred))
-                .withRegion(Regions.US_EAST_1).build();
+                .withRegion(Regions.US_EAST_2).build();
         try {
             PutObjectRequest put = new PutObjectRequest(bucketName, image.getOriginalFilename(),
                     image.getInputStream(), new ObjectMetadata()).withCannedAcl(CannedAccessControlList.PublicRead);
