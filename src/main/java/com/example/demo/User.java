@@ -19,7 +19,7 @@ public class User {
 	@Column(unique = true)
 	private String email;
 
-	@Column(nullable = false)
+	@Column()
 	private String password;
 
 	public Integer getId() {
@@ -48,6 +48,10 @@ public class User {
 
 	public String getEmail() {
 		return email;
+	}
+
+	public String getPassword() {
+		return password;
 	}
 
 	public void setEmail(String email) {
