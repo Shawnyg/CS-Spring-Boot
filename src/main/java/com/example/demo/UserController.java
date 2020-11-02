@@ -123,6 +123,8 @@ public class UserController {
 	public @ResponseBody User getOneUserByEmail(@RequestParam String email) {
 		return userRepository.findByEmail(email);
 	}
+
+
 	@GetMapping(path="/addUser")
 	public ModelAndView showPage(){
 		return new ModelAndView("signupForm");
@@ -131,5 +133,12 @@ public class UserController {
 	public ModelAndView showLogin(){
 		return new ModelAndView("login");
 	}
-	
+	@GetMapping("/home")
+    public ModelAndView home() {
+		ModelAndView mv = new ModelAndView("home");
+		User n = userRepository.findByEmail("s@no.com");
+		String pfp = n.getImgURL();
+        mv.addObject("pfp", pfp);
+        return mv;
+    }
 }
