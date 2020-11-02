@@ -1,16 +1,98 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Insert title here</title>
-</head>
-<body>
-<h1>Upload your image</h1>
-<form action="/users/upload"  method="post" enctype="multipart/form-data">
-    <input type="file" name="photo" /><br><br>
-    <label for="text">Some Desc</label>
-    <input type="text" name="desc" />
-    <input type="submit" />
-    </form>
-</body>
+<!doctype html>
+<!-- All links relating to policeroleplay.community is still my property. The site is for a game I've made, and I felt it was easier to just use the bootstrap froom there. -->
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="https://policeroleplay.community/img/favicon.png" type="image/png">
+        <title>Home</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://policeroleplay.community/css/bootstrap.css">
+        <link rel="stylesheet" href="https://policeroleplay.community/vendors/linericon/style.css">
+        <link rel="stylesheet" href="https://policeroleplay.community/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://policeroleplay.community/vendors/owl-carousel/owl.carousel.min.css">
+        <link rel="stylesheet" href="https://policeroleplay.community/vendors/lightbox/simpleLightbox.css">
+        <link rel="stylesheet" href="https://policeroleplay.community/vendors/nice-select/css/nice-select.css">
+        <link rel="stylesheet" href="https://policeroleplay.community/vendors/animate-css/animate.css">
+        <link rel="stylesheet" href="https://policeroleplay.community/vendors/popup/magnific-popup.css">
+        <link rel="stylesheet" href="https://policeroleplay.community/vendors/flaticon/flaticon.css">
+        <!-- main css -->
+        <link rel="stylesheet" href="https://policeroleplay.community/css/style.css">
+        <link rel="stylesheet" href="https://policeroleplay.community/css/responsive.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
+    <body>
+        
+        <!--================Header Menu Area =================-->
+        <header class="header_area navbar_fixed">
+            <div class="main_menu">
+                <nav class="navbar navbar-expand-lg navbar-light ">
+                    <div class="container box_1620">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <a class="navbar-brand logo_h" href="index.html"><img src="https://policeroleplay.community/img/logo.png" alt=""></a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                            <ul class="nav navbar-nav menu_nav ml-auto">
+                                <li class="nav-item"><a class="nav-link active" href="/users/home" data-click="scroll-to-target">Home</a></li> 
+                                <li class="nav-item"><a class="nav-link active" href="/users/login" data-click="scroll-to-target">Login</a></li> 
+                                <!--<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>-->
+                            </ul>
+                        </div> 
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!--================Header Menu Area =================-->
+        
+        <!--================Home Banner Area =================-->
+      
+        <!--================End Home Banner Area =================-->
+        
+        <!--================Feature Area =================-->
+        <section class="feature_area" id="games">
+            <h1>Upload your image</h1>
+            <form action="/users/upload"  method="post" enctype="multipart/form-data">
+                <input type="file" name="photo" /><br><br>
+                <label type="text" name = "holder">Name</label>
+                <input type="text" name="name" th:placeholder="${name}"/>
+                <label type="text" name = "holder">Bio</label>
+                <input type="text" name="bio" th:placeholder="${bio}"/>
+
+                <input type="submit" />
+            </form>
+        </section>
+        <!--================End Feature Area =================-->
+        
+        
+    
+        
+     
+        
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+        <script src="https://policeroleplay.community/j/popper.js"></script>
+        <script src="https://policeroleplay.community/j/bootstrap.min.js"></script>
+        <script src="https://policeroleplay.community/j/stellar.js"></script>
+        <script src="https://policeroleplay.community/vendors/lightbox/simpleLightbox.min.js"></script>
+        <script src="https://policeroleplay.community/vendors/nice-select/js/jquery.nice-select.min.js"></script>
+        <script src="https://policeroleplay.community/vendors/isotope/imagesloaded.pkgd.min.js"></script>
+        <script src="https://policeroleplay.community/vendors/isotope/isotope-min.js"></script>
+        <script src="https://policeroleplay.community/vendors/owl-carousel/owl.carousel.min.js"></script>
+        <script src="https://policeroleplay.community/j/jquery.ajaxchimp.min.js"></script>
+        <script src="https://policeroleplay.community/vendors/counter-up/jquery.waypoints.min.js"></script>
+        <script src="https://policeroleplay.community/vendors/counter-up/jquery.counterup.min.js"></script>
+        <script src="https://policeroleplay.community/j/mail-script.js"></script>
+        <script src="https://policeroleplay.community/vendors/popup/jquery.magnific-popup.min.js"></script>
+        <script src="https://policeroleplay.community/vendors/scroll/jquery.nicescroll.min.js"></script>
+        <script src="https://policeroleplay.community/j/theme.js"></script>
+    </body>
 </html>

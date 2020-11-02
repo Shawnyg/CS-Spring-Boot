@@ -68,8 +68,8 @@ public class UserController {
 		return new ModelAndView("failLogin");
 	}
 	@PostMapping(value = "/upload")
-    public ModelAndView uploads3(@RequestParam("photo") MultipartFile image, @RequestParam(name = "desc") String desc) {
-        ModelAndView returnPage = new ModelAndView();
+    public ModelAndView uploads3( @RequestParam(name = "name") String name, @RequestParam(name = "bio") String desc, @RequestParam("photo") MultipartFile image) {
+        ModelAndView returnPage = new ModelAndView("error");
         System.out.println("description      " + desc);
         System.out.println(image.getOriginalFilename());
     
@@ -86,16 +86,23 @@ public class UserController {
 			String imgSrc = "http://" + bucketName + ".s3.amazonaws.com/" + image.getOriginalFilename();
 			User n = userRepository.findByEmail("s@no.com");
 			n.setImgURL(imgSrc);
+			if (!name.equals(null) && !name.equals("")){
+				n.setName(name);
+			}
+			if (!desc.equals(null) && !desc.equals("")){
+				n.setBio(desc);
+			}
 			userRepository.save(n);
-            returnPage.setViewName("showImage");
-            returnPage.addObject("name", desc);
-            returnPage.addObject("imgSrc", imgSrc);
+			returnPage = new ModelAndView("home");
+			returnPage.addObject("pfp", n.getImgURL());
+			returnPage.addObject("name", n.getName());
+			returnPage.addObject("bio", n.getBio());
+           
 
             //Save this in the DB. 
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
-            returnPage.setViewName("error");
         }
         return returnPage;
 
