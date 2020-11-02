@@ -58,8 +58,8 @@ public class UserController {
 		return new ModelAndView("signupForm");
 	}
 
-	@ExceptionHandler(NoHandlerFoundException.class)
-	public ModelAndView handle(Exception ex) {
+	@GetMapping(path="/error")
+	public ModelAndView showError(){
 		return new ModelAndView("404");
 	}
 }
