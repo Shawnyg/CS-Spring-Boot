@@ -57,9 +57,4 @@ public class UserController {
 	public ModelAndView showPage(){
 		return new ModelAndView("signupForm");
 	}
-
-	@GetMapping(path="/error")
-	public ModelAndView showError(){
-		return new ModelAndView("404");
-	}
 }
