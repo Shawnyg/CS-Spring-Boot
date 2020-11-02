@@ -76,4 +76,8 @@ public class UserController {
 	public ModelAndView showPage(){
 		return new ModelAndView("signupForm");
 	}
+	@GetMapping(path="/login")
+	public ModelAndView showLogin(){
+		return new ModelAndView("login");
+	}
 }
