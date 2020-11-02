@@ -19,6 +19,9 @@ public class User {
 	@Column(unique = true)
 	private String email;
 
+	@Column(nullable = false)
+	private String password;
+
 	public Integer getId() {
 		return id;
 	}
@@ -33,6 +36,14 @@ public class User {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public boolean comparePassword(String totest) {
+		return totest.equals(this.password);
 	}
 
 	public String getEmail() {
