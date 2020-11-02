@@ -62,7 +62,13 @@
     		<artifactId>aws-java-sdk</artifactId>
     		<version>1.11.884</version>
 		</dependency>
-	</dependencies>
+	
+   <dependency>
+     <groupId>org.springframework</groupId>
+     <artifactId>spring-web</artifactId>
+     <version>5.1.9.RELEASE</version>
+   </dependency>
+ </dependencies>
 
 	<build>
 		<plugins>

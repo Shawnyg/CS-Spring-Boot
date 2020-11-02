@@ -4,12 +4,14 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.NoHandlerFoundException;
 
 @Controller	// This means that this class is a Controller
 @RequestMapping(path="/users") // This means URL's start with /users (after Application path)
@@ -54,5 +56,10 @@ public class UserController {
 	@GetMapping(path="/addUser")
 	public ModelAndView showPage(){
 		return new ModelAndView("signupForm");
+	}
+
+	@ExceptionHandler(NoHandlerFoundException.class)
+	public ModelAndView handle(Exception ex) {
+		return new ModelAndView("404");
 	}
 }
