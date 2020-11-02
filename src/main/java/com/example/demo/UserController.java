@@ -83,8 +83,10 @@ public class UserController {
                     image.getInputStream(), new ObjectMetadata()).withCannedAcl(CannedAccessControlList.PublicRead);
             client.putObject(put);
 
-            String imgSrc = "http://" + bucketName + ".s3.amazonaws.com/" + image.getOriginalFilename();
-
+			String imgSrc = "http://" + bucketName + ".s3.amazonaws.com/" + image.getOriginalFilename();
+			User n = userRepository.findByEmail("s@no.com");
+			n.setImgURL(imgSrc);
+			userRepository.save(n);
             returnPage.setViewName("showImage");
             returnPage.addObject("name", desc);
             returnPage.addObject("imgSrc", imgSrc);

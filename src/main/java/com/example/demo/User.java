@@ -22,6 +22,12 @@ public class User {
 	@Column()
 	private String password;
 
+	@Column()
+	private String bio;
+
+	@Column()
+	private String imgURL;
+
 	public Integer getId() {
 		return id;
 	}
@@ -44,6 +50,22 @@ public class User {
 
 	public boolean comparePassword(String totest) {
 		return totest.equals(this.password);
+	}
+
+	public void setImgURL(String imgURL) {
+		this.imgURL = imgURL;
+	}
+
+	public String getImgURL() {
+		return imgURL;
+	}
+
+	public String getBio() {
+		return bio;
+	}
+
+	public void setBio(String bio) {
+		this.bio = bio;
 	}
 
 	public String getEmail() {
