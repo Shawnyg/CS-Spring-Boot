@@ -36,7 +36,22 @@ public class UserController {
 		userRepository.save(n);
 		return "Saved";
 	}
+/**
+	@PostMapping(path="/login") // Map ONLY POST Requests
+	public @ResponseBody String loginUser (
+			 @RequestParam String email
+			, @RequestParam String password) {
+		// @ResponseBody means the returned String is the response, not a view name
+		// @RequestParam means it is a parameter from the GET or POST request
 
+		User n = new User();
+		n.setName(name);
+		n.setEmail(email);
+		n.setPassword(password);;
+		userRepository.save(n);
+		return "Saved";
+	}
+*/
 	@GetMapping(path="/all")
 	public @ResponseBody Iterable<User> getAllUsers() {
 		// This returns a JSON or XML with the users
@@ -52,6 +67,12 @@ public class UserController {
 	@GetMapping(path="/userByName")
 	public @ResponseBody User getOneUserByName(@RequestParam String name) {
 		return userRepository.findByName(name);
+	}
+
+	
+	@GetMapping(path="/userByEmail")
+	public @ResponseBody User getOneUserByEmail(@RequestParam String email) {
+		return userRepository.findByEmail(email);
 	}
 	@GetMapping(path="/addUser")
 	public ModelAndView showPage(){
