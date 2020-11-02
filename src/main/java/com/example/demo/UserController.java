@@ -32,26 +32,24 @@ public class UserController {
 		User n = new User();
 		n.setName(name);
 		n.setEmail(email);
-		n.setPassword(password);;
+		n.setPassword(password);
 		userRepository.save(n);
 		return "Saved";
 	}
-/**
 	@PostMapping(path="/login") // Map ONLY POST Requests
-	public @ResponseBody String loginUser (
+	public ModelAndView loginUser (
 			 @RequestParam String email
 			, @RequestParam String password) {
 		// @ResponseBody means the returned String is the response, not a view name
 		// @RequestParam means it is a parameter from the GET or POST request
 
-		User n = new User();
-		n.setName(name);
-		n.setEmail(email);
-		n.setPassword(password);;
-		userRepository.save(n);
-		return "Saved";
+		User n = userRepository.findByEmail(email);
+		boolean result = n.comparePassword(password);
+		if (result == true) {
+			return new ModelAndView("signupForm");
+		}
+		return new ModelAndView("index.html");
 	}
-*/
 	@GetMapping(path="/all")
 	public @ResponseBody Iterable<User> getAllUsers() {
 		// This returns a JSON or XML with the users
