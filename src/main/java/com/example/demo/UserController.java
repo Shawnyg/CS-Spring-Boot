@@ -137,8 +137,9 @@ public class UserController {
     public ModelAndView home() {
 		ModelAndView mv = new ModelAndView("home");
 		User n = userRepository.findByEmail("s@no.com");
-		String pfp = n.getImgURL();
-        mv.addObject("pfp", pfp);
+		mv.addObject("pfp", n.getImgURL());
+		mv.addObject("name", n.getName());
+		mv.addObject("bio", n.getBio());
         return mv;
     }
 }
