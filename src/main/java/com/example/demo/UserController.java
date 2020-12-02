@@ -167,8 +167,9 @@ public class UserController {
 			response = client.newCall(request).execute();
 			JSONObject obj = new JSONObject(response.body().string());
 				Object weather = obj.get("weather");
-				
-				System.out.println("WEATHER: " + weather.toString());
+			JSONObject weatherJson = new JSONObject(weather.toString());
+			String mainWeather = weatherJson.getString("main");
+			System.out.println("WEATHER: " + mainWeather);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
