@@ -173,6 +173,7 @@ public class UserController {
 			JSONObject weatherJson = new JSONObject(weatherString);
 			String mainWeather = weatherJson.getString("main");
 			System.out.println("WEATHER: " + mainWeather);
+			mv.addObject("weather", mainWeather);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
