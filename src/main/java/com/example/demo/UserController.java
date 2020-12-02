@@ -169,6 +169,7 @@ public class UserController {
 			Object weather = obj.get("weather");
 			String weatherString = weather.toString();
 			weatherString.substring(1, weatherString.length() - 1);
+			System.out.println("STring: " + weatherString);
 			JSONObject weatherJson = new JSONObject(weatherString);
 			String mainWeather = weatherJson.getString("main");
 			System.out.println("WEATHER: " + mainWeather);
