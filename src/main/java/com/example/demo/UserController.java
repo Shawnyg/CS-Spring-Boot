@@ -166,8 +166,10 @@ public class UserController {
 		try {
 			response = client.newCall(request).execute();
 			JSONObject obj = new JSONObject(response.body().string());
-				Object weather = obj.get("weather");
-			JSONObject weatherJson = new JSONObject(weather.toString());
+			Object weather = obj.get("weather");
+			String weatherString = weather.toString();
+			weatherString.substring(1, weatherString.length() - 2);
+			JSONObject weatherJson = new JSONObject();
 			String mainWeather = weatherJson.getString("main");
 			System.out.println("WEATHER: " + mainWeather);
 		} catch (IOException e) {
