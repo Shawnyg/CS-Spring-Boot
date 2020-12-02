@@ -162,15 +162,20 @@ public class UserController {
 				.addHeader("x-rapidapi-host", "community-open-weather-map.p.rapidapi.com").build();
 		
 
-				Response response;
+				
 		try {
+			// Response body
+			Response response;
 			response = client.newCall(request).execute();
+			// Make it 1 big JSON
 			JSONObject obj = new JSONObject(response.body().string());
 			Object weather = obj.get("weather");
 			String weatherString = weather.toString();
+			// Take the straight brackets out
 			weatherString = weatherString.substring(1, weatherString.length() - 1);
-			System.out.println("STring: " + weatherString);
+			//System.out.println("STring: " + weatherString);
 			JSONObject weatherJson = new JSONObject(weatherString);
+			// grab actual current weather
 			String mainWeather = weatherJson.getString("main");
 			System.out.println("WEATHER: " + mainWeather);
 			mv.addObject("weather", mainWeather);
