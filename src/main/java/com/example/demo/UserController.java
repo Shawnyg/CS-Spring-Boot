@@ -198,8 +198,9 @@ public class UserController {
 			// Make it 1 big JSON
 			JSONObject obj = new JSONObject(response.body().string());
 			Object weather = obj.get("weather");
+			System.out.println("STring: " + weather.toString());
 			String weatherString = weather.toString();
-			System.out.println("STring: " + weatherString);
+			
 			// Take the straight brackets out
 			weatherString = weatherString.substring(1, weatherString.length() - 1);
 			//System.out.println("STring: " + weatherString);
