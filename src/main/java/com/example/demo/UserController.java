@@ -23,7 +23,11 @@ import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import java.io.IOException;
 import org.springframework.web.multipart.MultipartFile;
-
+import com.squareup.okhttp.MediaType;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.RequestBody;
+import com.squareup.okhttp.Response;
 
 @Controller	// This means that this class is a Controller
 @RequestMapping(path="/users") // This means URL's start with /users (after Application path)
@@ -147,6 +151,22 @@ public class UserController {
 		mv.addObject("pfp", n.getImgURL());
 		mv.addObject("name", n.getName());
 		mv.addObject("bio", n.getBio());
+		OkHttpClient client = new OkHttpClient();
+
+		Request request = new Request.Builder()
+			.url("https://community-open-weather-map.p.rapidapi.com/weather?q=Albany%2C%20New%20York&lang=null&units=imperial")
+			.get()
+			.addHeader("x-rapidapi-key", "4e140538e3msh986bcbe30170363p10d372jsn5fdc24860cb1")
+			.addHeader("x-rapidapi-host", "community-open-weather-map.p.rapidapi.com")
+			.build();
+
+		try {
+			Response response = client.newCall(request).execute();
+			System.out.println("Output: " + response.body().toString());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         return mv;
     }
 }
