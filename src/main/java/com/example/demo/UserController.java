@@ -196,20 +196,22 @@ public class UserController {
 			Response response;
 			response = client.newCall(request).execute();
 			// Make it 1 big JSON
-			System.out.println("STring: " + response.body().string() );
 			JSONObject obj = new JSONObject(response.body().string());
 			Object weather = obj.get("weather");
-			
+			Object temp = obj.get("main");
 			String weatherString = weather.toString();
-			
+			String tempString = temp.toString();
 			// Take the straight brackets out
 			weatherString = weatherString.substring(1, weatherString.length() - 1);
 			//System.out.println("STring: " + weatherString);
 			JSONObject weatherJson = new JSONObject(weatherString);
+			JSONObject tempJson = new JSONObject(tempString);
 			// grab actual current weather
 			String mainWeather = weatherJson.getString("main");
-			System.out.println("WEATHER: " + mainWeather);
+			Double mainTemp = tempJson.getDouble("temp");
+			System.out.println("WEATHER: " + mainWeather + "; Temp: " + mainTemp.toString());
 			mv.addObject("weather", mainWeather);
+			mv.addObject("temperature", mainTemp);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
