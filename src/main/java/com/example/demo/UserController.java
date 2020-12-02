@@ -162,7 +162,7 @@ public class UserController {
 
 		try {
 			Response response = client.newCall(request).execute();
-			System.out.println("Output: " + response.body().toString());
+			System.out.println("Output: " + response.body().string());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
