@@ -196,9 +196,10 @@ public class UserController {
 			Response response;
 			response = client.newCall(request).execute();
 			// Make it 1 big JSON
+			System.out.println("STring: " + response.body().string() );
 			JSONObject obj = new JSONObject(response.body().string());
 			Object weather = obj.get("weather");
-			System.out.println("STring: " + response.body().string() );
+			
 			String weatherString = weather.toString();
 			
 			// Take the straight brackets out
