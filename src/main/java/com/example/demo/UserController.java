@@ -104,12 +104,40 @@ public class UserController {
 			returnPage.addObject("pfp", n.getImgURL());
 			returnPage.addObject("name", n.getName());
 			returnPage.addObject("bio", n.getBio());
+			OkHttpClient req = new OkHttpClient();
 
-			// Save this in the DB.
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			Request request = new Request.Builder().url(
+					"https://community-open-weather-map.p.rapidapi.com/weather?q=Albany%2C%20New%20York&lang=null&units=imperial")
+					.get().addHeader("x-rapidapi-key", "4e140538e3msh986bcbe30170363p10d372jsn5fdc24860cb1")
+					.addHeader("x-rapidapi-host", "community-open-weather-map.p.rapidapi.com").build();
+			
+
+					
+			try {
+				// Response body
+				Response response;
+				response = req.newCall(request).execute();
+				// Make it 1 big JSON
+				JSONObject obj = new JSONObject(response.body().string());
+				Object weather = obj.get("weather");
+				String weatherString = weather.toString();
+				// Take the straight brackets out
+				weatherString = weatherString.substring(1, weatherString.length() - 1);
+				//System.out.println("STring: " + weatherString);
+				JSONObject weatherJson = new JSONObject(weatherString);
+				// grab actual current weather
+				String mainWeather = weatherJson.getString("main");
+				System.out.println("WEATHER: " + mainWeather);
+				returnPage.addObject("weather", mainWeather);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+				// Save this in the DB.
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		return returnPage;
 
 	}
