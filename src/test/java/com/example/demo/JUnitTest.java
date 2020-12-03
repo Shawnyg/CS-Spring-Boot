@@ -22,6 +22,6 @@ public class JUnitTest{
         String target = "temp";
         Double expected = 37.4;
         UserController testClass = new UserController();
-        assertTrue(expected == testClass.GetNestedTempJSON(caseTest, target));
+        assertEquals(expected, testClass.GetNestedTempJSON(caseTest, target));
     }
 }
