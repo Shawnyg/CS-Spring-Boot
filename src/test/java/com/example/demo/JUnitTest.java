@@ -20,7 +20,7 @@ public class JUnitTest{
     public void testNestedTemperature() {
         String caseTest = "{\"main\":{\"temp\":37.4}}";
         String target = "temp";
-        Double expected = 37.4;
+        Double expected = 37.3;
         UserController testClass = new UserController();
         assertEquals(expected, testClass.GetNestedTempJSON(caseTest, target));
     }
