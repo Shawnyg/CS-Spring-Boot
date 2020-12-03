@@ -1,13 +1,8 @@
-package com.example;
-
-import java.util.*;
-
-import com.example.demo.UserController;
+package com.example.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import static org.junit.Assert.*;
-import org.json.*;
 
 @SpringBootTest
 public class JUnitTest{
