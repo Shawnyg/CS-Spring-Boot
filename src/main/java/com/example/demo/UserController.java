@@ -168,7 +168,7 @@ public class UserController {
 	
 	public String GetNestedWeatherJSON(String json, String target) {
 		JSONObject obj = new JSONObject(json);
-		Object weather = obj.get(target);
+		Object weather = obj.get("weather");
 		String weatherString = weather.toString();
 		// Take the straight brackets out
 		weatherString = weatherString.substring(1, weatherString.length() - 1);
