@@ -25,10 +25,8 @@ import com.fasterxml.jackson.core.JsonParser;
 
 import java.io.IOException;
 import org.springframework.web.multipart.MultipartFile;
-import com.squareup.okhttp.MediaType;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
-import com.squareup.okhttp.RequestBody;
 import com.squareup.okhttp.Response;
 import org.json.*;
 
@@ -120,15 +118,20 @@ public class UserController {
 				// Make it 1 big JSON
 				JSONObject obj = new JSONObject(response.body().string());
 				Object weather = obj.get("weather");
+				Object temp = obj.get("main");
 				String weatherString = weather.toString();
+				String tempString = temp.toString();
 				// Take the straight brackets out
 				weatherString = weatherString.substring(1, weatherString.length() - 1);
 				//System.out.println("STring: " + weatherString);
 				JSONObject weatherJson = new JSONObject(weatherString);
+				JSONObject tempJson = new JSONObject(tempString);
 				// grab actual current weather
 				String mainWeather = weatherJson.getString("main");
-				System.out.println("WEATHER: " + mainWeather);
+				Double mainTemp = tempJson.getDouble("temp");
+				System.out.println("WEATHER: " + mainWeather + "; Temp: " + mainTemp.toString());
 				returnPage.addObject("weather", mainWeather);
+				returnPage.addObject("temperature", mainTemp);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
